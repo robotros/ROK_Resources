@@ -1,0 +1,48 @@
+{
+  "homepage": "https://www.wmpq.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robotros/WMPQ-Website"
+  },
+  "author": {
+    "name": "Aron Roberts",
+    "url": "https://www.aronroberts.com/"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "acorn": "^6.4.2",
+    "ajv": "^6.12.6",
+    "axios": "^0.21.1",
+    "babel-eslint": "^7.2.3",
+    "crypto-js": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.10.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.24.0",
+    "fstream": "^1.0.12",
+    "install": "^0.12.2",
+    "npm": "^6.14.13",
+    "papaparse": "^5.3.1",
+    "prop-types": "^15.7.2",
+    "qs": "^6.10.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-router-dom": "^4.3.1",
+    "tar": "^4.4.10",
+    "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "react-scripts": "1.1.4",
+    "react-social-icons": "^4.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "serve": "serve build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "license": "MIT"
+}
