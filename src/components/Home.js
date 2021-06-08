@@ -60,6 +60,45 @@ class Home extends React.Component {
     let trainingSpeed = 0;
     let healingSpeed = 0;
 
+
+    if (this.state.title.counsellor) {
+      buildingSpeed = buildingSpeed + 1;
+      researchSpeed = researchSpeed + 1;
+      trainingSpeed = trainingSpeed + 0;
+      healingSpeed = healingSpeed + 0;
+    }
+
+    if (this.state.title.duke) {
+      buildingSpeed = buildingSpeed + 0;
+      researchSpeed = researchSpeed + 0;
+      trainingSpeed = trainingSpeed + 5;
+      healingSpeed = healingSpeed + 0;
+    }
+    if (this.state.title.architect) {
+      buildingSpeed = buildingSpeed + 5;
+      researchSpeed = researchSpeed + 0;
+      trainingSpeed = trainingSpeed + 0;
+      healingSpeed = healingSpeed + 0;
+    }
+    if (this.state.title.scientist) {
+      buildingSpeed = buildingSpeed + 0;
+      researchSpeed = researchSpeed + 5;
+      trainingSpeed = trainingSpeed + 0;
+      healingSpeed = healingSpeed + 0;
+    }
+
+    switch (this.state.civ) {
+      case 'China':
+        buildingSpeed = buildingSpeed + 5;
+        break;
+      case 'Germany':
+        trainingSpeed = trainingSpeed + 5;
+        break;
+      case 'Korea':
+        researchSpeed = researchSpeed + 5;
+        break;
+    }
+
     if (this.state.max_building) {
       buildingSpeed = buildingSpeed + 0;
       researchSpeed = researchSpeed + 25;
@@ -157,13 +196,20 @@ class Home extends React.Component {
     let research = event.target[2].checked;
     let allianceTech = event.target[3].checked;
     let holySites = event.target[4].checked;
+    let civ = event.target[5].value;
+    let title = {counsellor: event.target[6].checked, duke: event.target[7].checked, scientist: event.target[8].checked, architect: event.target[9].checked};
 
     await this.setState({
       VIP: vip,
       max_building: buildings,
       max_technology: research,
       max_alliance_tech: allianceTech,
-      all_holy_sites: holySites});
+      all_holy_sites: holySites,
+      title: title,
+      civ: civ,
+    });
+
+    console.warn(this.state);
     await this.calculateSpeed();
     await this.buildData();
   };
